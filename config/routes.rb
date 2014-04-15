@@ -1,8 +1,8 @@
 Projects1::Application.routes.draw do
-  devise_for :users
+  resources :microposts
 
-  resources :users
-  root :to => "users#index"
+  devise_for :users
+  root :to => "microposts#index"
 
   
   # The priority is based upon order of creation:
