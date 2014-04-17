@@ -1,0 +1,20 @@
+ <div class="navbar-inner">
+    <div class="container">
+      <nav>
+        <% if user_signed_in? %>
+          <ul class="nav pull-right">
+            <li><%= link_to "Домашняя страница", root_path %></li>
+            <li><%= link_to 'Создать сообщение', new_micropost_path %></li>
+            <li><%= link_to "Редактировать мой профиль", edit_user_registration_path %></li>
+            <li><%= link_to "Выход", destroy_user_session_path, :method => :delete %></li>
+          </ul>
+        <% else %>
+          <ul class="nav pull-right">
+            <h4>
+              <li><%= link_to "Вход", new_user_session_path %></li>
+            </h4>
+          </ul>
+        <% end %>
+      </nav>
+    </div>
+  </div>  

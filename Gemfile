@@ -7,6 +7,7 @@ gem 'rails', '3.2.13'
 
 gem 'sqlite3'
 gem "devise", "~>3.2.2"
+gem "activeadmin", github: "gregbell/active_admin"	
 
 
 # Gems used only for assets and not required
@@ -21,7 +22,8 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-gem 'jquery-rails'
+gem "jquery-rails", "< 3.0.0"
+gem 'jquery-ui-rails'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

@@ -1,4 +1,5 @@
 Projects1::Application.routes.draw do
+  
   resources :microposts
 
   devise_for :users

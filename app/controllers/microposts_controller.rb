@@ -1,6 +1,8 @@
 class MicropostsController < ApplicationController
   # GET /microposts
   # GET /microposts.json
+  respond_to :html, :json
+  include MicropostsHelper
   def index
     @microposts = Micropost.all
 
@@ -41,10 +43,11 @@ class MicropostsController < ApplicationController
   # POST /microposts.json
   def create
     @micropost = Micropost.new(params[:micropost])
+    @micropost.user = current_user
 
     respond_to do |format|
       if @micropost.save
-        format.html { redirect_to @micropost, notice: 'Micropost was successfully created.' }
+        format.html { redirect_to root_path, notice: 'Micropost was successfully created.' }
         format.json { render json: @micropost, status: :created, location: @micropost }
       else
         format.html { render action: "new" }
