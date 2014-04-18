@@ -2,6 +2,9 @@
     <div class="container">
       <nav>
         <% if user_signed_in? %>
+        <ul class="nav pull-left">
+          <li><%= link_to "Администратор", admin_microposts_path %></li>
+        </ul>
           <ul class="nav pull-right">
             <li><%= link_to "Домашняя страница", root_path %></li>
             <li><%= link_to 'Создать сообщение', new_micropost_path %></li>

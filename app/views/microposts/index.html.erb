@@ -8,6 +8,7 @@
     </td>
     <td><span class="content"><%= micropost.title %></span></td>
     <% if user_signed_in? && current_user == micropost.user %>
+      <td><%= link_to 'Show', micropost_path(micropost) %></td>
       <td><%= link_to 'Edit', edit_micropost_path(micropost) %></td>
       <td><%= link_to 'Destroy', micropost, method: :delete, data: { confirm: 'Are you sure?' } %></td>
     <% end %>

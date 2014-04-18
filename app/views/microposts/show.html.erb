@@ -1,4 +1,12 @@
-<p id="notice"><%= notice %></p>
+<p id="notice">
+<li>
+  <span class="content"><%= @micropost.title %></span>
+  <span class="content"><%= @micropost.content %></span>
+  <span class="timestamp">
+    Posted <%= time_ago_in_words(@micropost.created_at) %> ago.
+  </span>
+</li>
+</p>
 
 
 <%= link_to 'Edit', edit_micropost_path(@micropost) %> |

@@ -2,7 +2,6 @@ class MicropostsController < ApplicationController
   # GET /microposts
   # GET /microposts.json
   respond_to :html, :json
-  include MicropostsHelper
   def index
     @microposts = Micropost.all
 
