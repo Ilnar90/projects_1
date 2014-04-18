@@ -38,6 +38,4 @@ Projects1::Application.configure do
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
 
   # Set variables for Recaptcha on Localhost
-    ENV['RECAPTCHA_PUBLIC_KEY'] =  'mypublickeyhere'
-    ENV['RECAPTCHA_PRIVATE_KEY'] = 'myprivatekeyhere'
 end

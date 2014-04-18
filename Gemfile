@@ -6,7 +6,6 @@ gem 'rails', '3.2.13'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
-gem 'recaptcha', :require => 'recaptcha/rails'
 gem "devise", "~>3.2.2"
 gem "activeadmin", github: "gregbell/active_admin"	
 
