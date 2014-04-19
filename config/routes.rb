@@ -5,7 +5,7 @@ Projects1::Application.routes.draw do
 
   resources :microposts
 
-  devise_for :users
+  devise_for :users, controllers: { registrations: 'registrations' }
   root :to => "microposts#index"
 
   

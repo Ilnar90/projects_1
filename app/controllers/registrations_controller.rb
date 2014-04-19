@@ -1,4 +1,12 @@
 class RegistrationsController < Devise::RegistrationsController
   def create
+  	if verify_recaptcha(:timeout =>30)
+      super
+    else
+      build_resource
+      clean_up_passwords(resource)
+      flash.now[:alert] = "There was an error with the recaptcha code below. Please re-enter the code."      
+      render :new
+    end
   end
 end
