@@ -1,10 +1,8 @@
 class MicropostsController < ApplicationController
-  # GET /microposts
-  # GET /microposts.json
-  respond_to :html, :json
+   respond_to :html, :json
   def index
     @microposts = Micropost.all
-
+    
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @microposts }
@@ -15,6 +13,7 @@ class MicropostsController < ApplicationController
   # GET /microposts/1.json
   def show
     @micropost = Micropost.find(params[:id])
+    @comments = @micropost.comments
 
     respond_to do |format|
       format.html # show.html.erb

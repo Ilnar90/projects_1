@@ -3,7 +3,9 @@ Projects1::Application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
-  resources :microposts
+  resources :microposts do
+    resources :comments, :only => [:create]
+  end
 
   devise_for :users, controllers: { registrations: 'registrations' }
   root :to => "microposts#index"

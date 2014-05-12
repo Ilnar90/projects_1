@@ -1,0 +1,11 @@
+<h4>Comments:</h4>
+<% if @micropost.comments.length > 0 %>
+  <% @micropost.comments.each do |comment| %>
+    <p>
+      <b>Author:</b>
+      <%= comment.content %>
+    </p>
+  <% end %>
+<% else %>
+  <h4>No comments have been posted yet.</h4>
+<% end %>

@@ -1,12 +1,15 @@
- <div class="navbar-inner">
-    <div class="container">
-      <nav>
+<div class="container" style="margin-top: 40px;">
+  <div class="navbar navbar-inverse navbar-fixed-top">
+      <nav class="navbar-inner">
         <% if user_signed_in? %>
-        <ul class="nav pull-left">
-          <li><%= link_to "Администратор", admin_microposts_path %></li>
-        </ul>
+        <ul class="nav pull">
+          <li>
+            <h4><%= link_to "Проект 1", root_path %></h4>
+          </li>
+        </ul> 
           <ul class="nav pull-right">
-            <li><%= link_to "Домашняя страница", root_path %></li>
+            <li class= "divider-vertical"></li>
+            <li><%= link_to "Администратор", admin_microposts_path %></li>
             <li><%= link_to 'Создать сообщение', new_micropost_path %></li>
             <li><%= link_to "Редактировать мой профиль", edit_user_registration_path %></li>
             <li><%= link_to "Выход", destroy_user_session_path, :method => :delete %></li>
@@ -20,4 +23,4 @@
         <% end %>
       </nav>
     </div>
-  </div>  
+</div>  
